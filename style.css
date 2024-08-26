@@ -1,77 +1,96 @@
-body{
-    background-color: #D8DBE2;
-    margin: 0;
-    margin-bottom: 100px;
+body {
+  background-color: #D8DBE2;
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
-#titulo{
-    color: #1B1B1E;
-    font-size: 72px;
-    display: grid;
-    place-items: center;
+
+#titulo {
+  color: #1B1B1E;
+  font-size: 48px;
+  display: grid;
+  place-items: center;
+  margin: 20px 0;
 }
+
 header {
-    background-color: #A9BCD0;
-    padding: 5px;
-    text-align: center;
-  }
-#mano1{
-    width: 50%;
-    float: right;
+  background-color: #A9BCD0;
+  padding: 10px;
+  text-align: center;
 }
-* {
-    box-sizing: border-box;
-  }
 
-  /* Style the top navigation bar */
-  .topnav {
-    overflow: hidden;
-    background-color: #373F51;
-    height: 55px;
-  }
-  
-  /* Style the topnav links */
-  .topnav a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 20px;
-    text-decoration: none;
-  }
-  
-  /* Change color on hover */
-  .topnav a:hover {
-    background-color: #ddd;
-    color: black;
-  }
+#hero {
+  position: relative; /* El contenedor del H1 debe ser relativo */
+}
 
+#mano1 {
+  position: absolute;
+  width: 25%; /* Reduce el tamaño de la imagen */
+  top: -150px; /* Ajusta la distancia desde la parte superior */
+  right: -5px; /* Ajusta la distancia desde la derecha */
+  transform: rotate(-30deg); /* Opcional: Inclina ligeramente la mano */
+}
+
+@media screen and (max-width: 600px) {
+  #mano1 {
+    width: 25%; /* Aumenta el tamaño en pantallas pequeñas */
+    top: -60px; /* Ajusta la posición superior */
+    right: -5; /* Ajusta la posición derecha */
+    transform: rotate(-20deg); /* Ajusta la inclinación */
+  }
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #373F51;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px 0;
+}
+
+.topnav a {
+  color: #f2f2f2;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 20px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.row {
+  display: flex;
+  justify-content: center; /* Centra las columnas horizontalmente */
+  flex-wrap: wrap; /* Asegura que las columnas se reorganicen en pantallas pequeñas */
+  gap: 20px; /* Espaciado entre las columnas */
+  padding: 20px;
+}
+
+.column {
+  flex: 1 1 calc(33.33% - 40px); /* Cada columna ocupa un tercio del contenedor menos el espaciado */
+  background-color: #1B1B1E; /* Fondo azul oscuro de las columnas */
+  color: #f2f2f2; /* Color del texto dentro de las columnas */
+  padding: 20px;
+  max-width: 400px; /* Ancho máximo de las columnas */
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
   .column {
-    float: left;
-    width: 33.33%;
-    padding: 15px;
+      flex: 1 1 100%; /* Las columnas ocupan todo el ancho en pantallas pequeñas */
+      max-width: none;
   }
-  
-  /* Clear floats after the columns */
-  .row::after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  
-  /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-  @media screen and (max-width:600px) {
-    .column {
-      width: 100%;
-    }
-  }
+}
 
-  .footer {
-    background-color: #373F51;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 100px;
-  }
+.footer {
+  background-color: #373F51;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
